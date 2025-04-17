@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaPlus - Catálogo de Filmes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        header {
+            background-color: #2d2d2d;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        .search-bar {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: white;
+            width: 300px;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .movie-card {
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 1rem;
+        }
+
+        .movie-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .movie-details {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .rating {
+            color: #ffd700;
+            margin-top: 0.5rem;
+        }
+
+        .categories {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+
+        .category-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .category-btn:hover {
+            background-color: #e50914;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .movies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">CinemaPlus</div>
+                <input type="search" class="search-bar" placeholder="Buscar filmes...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="categories">
+            <button class="category-btn">Todos</button>
+            <button class="category-btn">Ação</button>
+            <button class="category-btn">Comédia</button>
+            <button class="category-btn">Drama</button>
+            <button class="category-btn">Ficção Científica</button>
+            <button class="category-btn">Terror</button>
+            <button class="category-btn">Romance</button>
+            <button class="category-btn">Animação</button>
+        </div>
+
+        <div class="movies-grid">
+            <!-- Filme 1 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 1" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Vingadores: Ultimato</h3>
+                    <p class="movie-details">2019 • Ação/Aventura</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+            </div>
+
+            <!-- Filme 2 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 2" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Matrix</h3>
+                    <p class="movie-details">1999 • Ficção Científica</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Filme 3 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 3" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Interestelar</h3>
+                    <p class="movie-details">2014 • Ficção Científica</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Filme 4 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 4" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Pulp Fiction</h3>
+                    <p class="movie-details">1994 • Drama/Crime</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Filme 5 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 5" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">O Poderoso Chefão</h3>
+                    <p class="movie-details">1972 • Drama/Crime</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+
+            <!-- Filme 6 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 6" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Inception</h3>
+                    <p class="movie-details">2010 • Ficção Científica</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Adiciona funcionalidade de filtro aos botões de categoria
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove classe ativa de todos os botões
+                categoryButtons.forEach(btn => btn.style.backgroundColor = '#333');
+                // Adiciona classe ativa ao botão clicado
+                button.style.backgroundColor = '#e50914';
+            });
+        });
+
+        // Adiciona funcionalidade de busca
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const movieCards = document.querySelectorAll('.movie-card');
+
+            movieCards.forEach(card => {
+                const title = card.querySelector('.movie-title').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
